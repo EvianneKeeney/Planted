@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'turbolinks'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -26,10 +28,13 @@ group :development, :test do
   gem 'factory_girl'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
+  gem "dotenv-rails"
 end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'poltergeist'
+  gem 'database_cleaner'
   gem 'simplecov', :require => false, :group => :test
 end
 

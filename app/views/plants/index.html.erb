@@ -6,9 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>String</th>
       <th>Cycle</th>
-      <th>Integer</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +15,7 @@
     <% @plants.each do |plant| %>
       <tr>
         <td><%= plant.name %></td>
-        <td><%= plant.string %></td>
         <td><%= plant.cycle %></td>
-        <td><%= plant.integer %></td>
         <td><%= link_to 'Show', plant %></td>
         <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
         <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
