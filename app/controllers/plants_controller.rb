@@ -1,31 +1,25 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
-  # GET /plants
-  # GET /plants.json
   def index
     @plants = Plant.all
   end
 
-  # GET /plants/1
-  # GET /plants/1.json
   def show
   end
 
-  # GET /plants/new
   def new
+    @user = User.find(params[:user_id])
     @plant = Plant.new
   end
 
-  # GET /plants/1/edit
   def edit
   end
 
-  # POST /plants
-  # POST /plants.json
   def create
+    @user = User.find(params[:user_id])
     @plant = Plant.new(plant_params)
-
+    @plant.user = @user
     respond_to do |format|
       if @plant.save
         format.html { redirect_to @plant, notice: 'Plant was successfully created.' }
@@ -37,8 +31,6 @@ class PlantsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /plants/1
-  # PATCH/PUT /plants/1.json
   def update
     respond_to do |format|
       if @plant.update(plant_params)
@@ -51,8 +43,6 @@ class PlantsController < ApplicationController
     end
   end
 
-  # DELETE /plants/1
-  # DELETE /plants/1.json
   def destroy
     @plant.destroy
     respond_to do |format|
@@ -62,12 +52,10 @@ class PlantsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_plant
       @plant = Plant.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def plant_params
       params.require(:plant).permit(:name, :string, :cycle, :integer)
     end
