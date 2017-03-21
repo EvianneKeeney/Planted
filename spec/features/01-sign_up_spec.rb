@@ -29,7 +29,7 @@ feature 'sign_up' do
     click_link 'Sign up'
     fill_in 'user_password', with: 'password'
     fill_in 'Password confirmation', with: 'incorrectpassword'
-    
+
     click_button 'Sign up'
     expect(page).to have_content("doesn't match")
     expect(page).to_not have_content('Sign Out')

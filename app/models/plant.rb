@@ -3,4 +3,5 @@ class Plant < ApplicationRecord
 
   validates :name, presence: true
   validates :cycle, presence: true
+  validates :user, presence: true
 end

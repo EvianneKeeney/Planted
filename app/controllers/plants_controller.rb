@@ -9,25 +9,30 @@ class PlantsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @plant = Plant.new
+    @plant.user = current_user
+    if @plant.save
+      flash[:notice] = "Plant added!"
+      redirect_to user_plants_path(@user)
+    else
+      flash[:notice] = @plant.errors.full_messages
+      render :new
+    end
   end
 
   def edit
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @plant = Plant.new(plant_params)
     @plant.user = @user
-    respond_to do |format|
-      if @plant.save
-        format.html { redirect_to @plant, notice: 'Plant was successfully created.' }
-        format.json { render :show, status: :created, location: @plant }
-      else
-        format.html { render :new }
-        format.json { render json: @plant.errors, status: :unprocessable_entity }
-      end
+    if @plant.save
+      flash[:notice] = "Plant added!"
+      redirect_to user_plants_path(@user)
+    else
+      flash[:notice] = @plant.errors.full_messages
+      render :new
     end
   end
 
@@ -51,7 +56,8 @@ class PlantsController < ApplicationController
     end
   end
 
-  private
+    private
+
     def set_plant
       @plant = Plant.find(params[:id])
     end
