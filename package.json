@@ -5,8 +5,10 @@
   "main": "webpack.config.js",
   "engines": {
    "node": "6.10.0"
+  },
+ "engines": {
    "npm": "4.4.1"
- }
+  },
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
     "start": "npm run webpack -- --watch",
