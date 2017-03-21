@@ -9,7 +9,6 @@ FactoryGirl.define do
   end
 
   factory :plant do
-    sequence(:name) { |n| "Plant#{n}" }
     name 'Dahlia'
     cycle 72
   end
