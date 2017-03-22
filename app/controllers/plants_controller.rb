@@ -10,14 +10,6 @@ class PlantsController < ApplicationController
 
   def new
     @plant = Plant.new
-    @plant.user = current_user
-    if @plant.save
-      flash[:notice] = "Plant added!"
-      redirect_to user_plants_path(@user)
-    else
-      flash[:notice] = @plant.errors.full_messages
-      render :new
-    end
   end
 
   def edit
@@ -31,7 +23,6 @@ class PlantsController < ApplicationController
       flash[:notice] = "Plant added!"
       redirect_to user_plants_path(@user)
     else
-      flash[:notice] = @plant.errors.full_messages
       render :new
     end
   end
