@@ -17,8 +17,29 @@
 body {
    margin: 20;
    padding: 20;
-   background: #ccc;
+   background-image: url("http://soilshs.co.uk/s/cc_images/teaserbox_13014441.jpg?t=1429022285");
  }
+
+ .column {
+   float:left;
+   width:350px;
+   height: 350px;
+   border-radius:100%;
+   background-color: White;
+}
+
+.squarebutton { background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;}
+
+
+
+.plant-index {
+  column-count: 3;
+}
+
 
 .home-nav ul {
    list-style: none;
@@ -58,7 +79,7 @@ body {
 
 .home-nav a.active {
    background-color: #fff;
-   color: #444;
+   color: #fff;
    cursor: default;
  }
 
