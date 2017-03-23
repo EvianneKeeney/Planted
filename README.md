@@ -1,4 +1,5 @@
 # README
+small change
 
 ![Build Status](https://app.codeship.com/projects/297b4010-efad-0134-e01f-4e0ea4fc24eb/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/EvianneKeeney/Planted.png)
