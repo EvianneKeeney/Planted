@@ -3,7 +3,7 @@ import Timer from './Timer'
 
 const PlantItem = (props) => {
   return(
-  <button type="button" class="btn btn-primary">  <div className="column">
+  <button type="button" class="btn btn-primary" className= "squarebutton">  <div className="column">
 
       <h4><a href={`http://localhost:3000/plants/` + props.id}>{props.name}</a></h4>
       <p>Milliseconds Between Watering: {props.cycle}</p>
