@@ -17,8 +17,17 @@
 body {
    margin: 20;
    padding: 20;
-   background: #ccc;
+   background-image: url("http://soilshs.co.uk/s/cc_images/teaserbox_13014441.jpg?t=1429022285");
  }
+
+ .column {
+     width:300px;
+     float:left
+}
+
+.plant-index {
+  column-count: 3
+}
 
 .home-nav ul {
    list-style: none;

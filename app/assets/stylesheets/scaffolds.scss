@@ -1,6 +1,6 @@
 body {
   background-color: #fff;
-  color: #333;
+  color: #fff;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -46,6 +46,8 @@ td {
 div {
   &.field, &.actions {
     margin-bottom: 10px;
+    color: #fff;
+
   }
 }
 
