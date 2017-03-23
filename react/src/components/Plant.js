@@ -33,14 +33,30 @@ class Plant extends Component {
   }
 
   render() {
+    let date = new Date().getTime()
     let newPlant = this.state.plants.map((plant, index) => {
+
+      let planted_date = plant.created_at
+      let utc_date = new Date(planted_date).getTime()
+      let cycle_in_ms = plant.cycle * 86400000
+      let expected_to_water = utc_date + cycle_in_ms
+      let date_expected_to_water = new Date(expected_to_water).toUTCString();
+      let days_left_before_next_water = (expected_to_water - date)/86400000
+      if (days_left_before_next_water < 0){
+        plant.name = "Water Me"
+      }
       return (
-        <PlantItem
-          id={plant.id}
-          planted={plant.datetime}
-          name={plant.name}
-          cycle={plant.cycle}
-        />
+        <div>
+          <PlantItem
+            id={plant.id}
+            planted={utc_date}
+            name={plant.name}
+            cycle={cycle_in_ms}
+            present = {date}
+            expect = {date_expected_to_water}
+            time_left = {days_left_before_next_water}
+          />
+        </div>
       )
     });
 

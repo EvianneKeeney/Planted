@@ -5,5 +5,5 @@ class Api::V1::PlantsController < ApplicationController
 
   def show
     render json: Plant.all
-  end 
+  end
 end
