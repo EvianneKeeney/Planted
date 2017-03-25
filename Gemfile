@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'turbolinks'
 gem 'faker'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug', platform: :mri

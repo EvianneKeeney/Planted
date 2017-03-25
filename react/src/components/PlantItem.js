@@ -1,21 +1,37 @@
 import React from 'react';
-import Timer from './Timer'
 
 const PlantItem = (props) => {
+
   return(
-  <button type="button" class="btn btn-primary" className= "squarebutton">  <div className="column">
+    <button className="btn btn-primary" className= "squarebutton">
+      <div className="column" >
+        <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
+          <div className="flipper">
 
-      <h4><a href={`http://localhost:3000/plants/` + props.id}>{props.name}</a></h4>
-      <p>Milliseconds Between Watering: {props.cycle}</p>
-      <p>Last watered: {props.planted}</p>
-      <p>Expect to water me: {props.expect}</p>
-      <p>Present time: {props.present}</p>
-      <p>Days you have left: {props.time_left}</p>
+            <div className="front" >
+              {props.profile_photo ?
+                <a >
+                  <img src={props.profile_photo}  />
+                </a> :
+                <p > Photo Unavailable  </p>
+              }
+            </div>
 
-      <Timer/>
-    </div>
+            <div className="back">
+
+              <a href={`http://localhost:3000/plants/` + props.id}> {props.name} </a>
+              <p>Planted on: {props.planted}</p>
+              <p>Last watered on: {props.lastWaterDate}</p>
+              <p>Expect to water me: {props.expect}</p>
+              <p>Days you have left: {props.time_left}</p>
+              <button onClick={props.handleClick}>
+                Water Me
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </button>
-
   )
 }
 
