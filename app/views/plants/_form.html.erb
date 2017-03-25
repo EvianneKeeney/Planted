@@ -21,6 +21,13 @@
     <%= f.text_field :cycle %>
   </div>
 
+  <div class="field" >
+    <%= f.label :profile_photo do %><br />
+      <%= f.file_field :profile_photo %>
+      <%= f.hidden_field :profile_photo_cache %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

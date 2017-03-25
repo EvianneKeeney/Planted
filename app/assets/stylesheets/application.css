@@ -20,26 +20,84 @@ body {
    background-image: url("http://soilshs.co.uk/s/cc_images/teaserbox_13014441.jpg?t=1429022285");
  }
 
+
  .column {
-   float:left;
+
+
    width:350px;
    height: 350px;
-   border-radius:100%;
-   background-color: White;
 }
 
-.squarebutton { background-color: Transparent;
-            background-repeat:no-repeat;
-            border: none;
-            cursor:pointer;
-            overflow: hidden;}
+.front {
+  width: 350px;
+  height: 350px;
+  border-radius: 100%;
+}
+
+.front img{
+  align:center;
+  width:350px;
+  height:350px;
+  border-radius: 100%;
+}
 
 
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 350px;
+	height: 350px;
+  border-radius: 100%
+
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+/*.squarebutton {
+    background-color: White;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}*/
 
 .plant-index {
   column-count: 3;
 }
-
 
 .home-nav ul {
    list-style: none;

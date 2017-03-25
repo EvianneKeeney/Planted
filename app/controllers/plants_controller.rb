@@ -21,7 +21,7 @@ class PlantsController < ApplicationController
     @plant.user = @user
     if @plant.save
       flash[:notice] = "Plant added!"
-      redirect_to user_plants_path(@user)
+      redirect_to authenticated_root_path(@user)
     else
       render :new
     end
@@ -54,6 +54,6 @@ class PlantsController < ApplicationController
     end
 
     def plant_params
-      params.require(:plant).permit(:name, :string, :cycle, :integer)
+      params.require(:plant).permit(:name, :string, :cycle, :integer, :profile_photo, :remove_profile_photo, :date_last_watered)
     end
 end
