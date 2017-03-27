@@ -22,6 +22,8 @@ const PlantItem = (props) => {
               <a href={`http://localhost:3000/plants/` + props.id}> {props.name} </a>
               <p>Planted on: {props.planted}</p>
               <p>Last watered on: {props.lastWaterDate}</p>
+              <p>Cycle: {props.cycle}</p>
+
               <p>Expect to water me: {props.expect}</p>
               <p>Days you have left: {props.time_left}</p>
               <button onClick={props.handleClick}>
