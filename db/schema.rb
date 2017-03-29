@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324180929) do
+ActiveRecord::Schema.define(version: 20170328180128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20170324180929) do
     t.string   "profile_photo"
     t.datetime "date_last_watered"
     t.index ["user_id"], name: "index_plants_on_user_id", using: :btree
+  end
+
+  create_table "timers", force: :cascade do |t|
+    t.datetime "date_watered"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "plant_id"
+    t.index ["plant_id"], name: "index_timers_on_plant_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,4 +55,5 @@ ActiveRecord::Schema.define(version: 20170324180929) do
   end
 
   add_foreign_key "plants", "users"
+  add_foreign_key "timers", "plants"
 end

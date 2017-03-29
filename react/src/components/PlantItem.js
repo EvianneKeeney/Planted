@@ -3,7 +3,7 @@ import React from 'react';
 const PlantItem = (props) => {
 
   return(
-    <button className="btn btn-primary" className= "squarebutton">
+    <button onClick={props.handleClick} className="btn btn-primary" className= "squarebutton">
       <div className="column" >
         <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
           <div className="flipper">
@@ -26,9 +26,7 @@ const PlantItem = (props) => {
 
               <p>Expect to water me: {props.expect}</p>
               <p>Days you have left: {props.time_left}</p>
-              <button onClick={props.handleClick}>
-                Water Me
-              </button>
+
             </div>
           </div>
         </div>

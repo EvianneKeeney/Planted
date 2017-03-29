@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root 'home#index', as: :authenticated_root
+      root 'plants#index', as: :authenticated_root
     end
 
     unauthenticated do
@@ -14,17 +14,31 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :plants
+
+
   resources :users do
     resources :plants
   end
 
-  resources :plants
 
   namespace :api do
     namespace :v1 do
       resources :plants
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :timers
+    end
+  end
+
+
+  resources :plants do
+    resources :timers
+  end
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -44,35 +44,40 @@ class Plant extends Component {
 
 //      DATE PLANTED
       let planted_date = plant.created_at
-      let date_planted = new Date(planted_date).toUTCString();
+      let date_planted = new Date(planted_date).getTime()
+      let UTC_date_planted = new Date(date_planted).toUTCString();
 
 //      CYCLE
       let cycle_in_ms = plant.cycle * 86400000
 
 //      DATE WATERED
       let last_watered = this.state.last_watered;
-      let date_last_watered_to_utc = new Date(last_watered).toUTCString();
+      let date_last_watered_to_utc = new Date(last_watered).getTime()
+      let UTC_date_last_watered_to_utc = new Date(date_last_watered_to_utc).toUTCString();
+
       if(this.state.last_watered !== null){
-      plant.date_last_watered = date_last_watered_to_utc;
+      plant.date_last_watered = UTC_date_last_watered_to_utc;
       }
 
 //      NEEDS WATERING = date watered + cycle
-      let expected_to_water = plant.date_last_watered + cycle_in_ms
-      let date_expected_to_water = new Date(expected_to_water).toUTCString();
+      let expected_to_water = date_last_watered_to_utc + cycle_in_ms
+      let date_expected_to_water = new Date(expected_to_water).getTime();
+      let UTC_date_expected_to_water = new Date(date_expected_to_water).toUTCString();
+
       let date = new Date().getTime()
-      let days_left_before_next_water = (expected_to_water - date)/86400000;
+      let days_left_before_next_water = (date_expected_to_water - date)/86400000;
+
 
       return (
         <div>
 
-
           <PlantItem
             id={plant.id}
             name={plant.name}
-            planted={date_planted}
+            planted={UTC_date_planted}
             cycle={plant.cycle}
             lastWaterDate = {plant.date_last_watered}
-            expect = {date_expected_to_water}
+            expect = {UTC_date_expected_to_water}
             time_left = {days_left_before_next_water}
             profile_photo={plant.profile_photo.url}
             handleClick = {() => this.handleClick()}

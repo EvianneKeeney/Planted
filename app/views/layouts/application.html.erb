@@ -11,8 +11,8 @@
   <body class="gen-nav">
     <div class="home-nav">
       <ul>
-      <li> <a class="Home" <%= link_to "Garden", plants_path %> </a></li>
       <% if user_signed_in? %>
+        <li> <a class="Home" <%= link_to "Garden", user_plants_path(current_user) %> </a></li>
         <li> <a class="Profile" <%= link_to "User Profile", edit_user_registration_path %> </a></li>
         <li> <a class="Sign Out" <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </a></li>
         <%- else -%>
