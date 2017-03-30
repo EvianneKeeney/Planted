@@ -20,6 +20,7 @@ gem 'turbolinks'
 gem 'faker'
 gem 'carrierwave'
 gem 'fog'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'byebug', platform: :mri

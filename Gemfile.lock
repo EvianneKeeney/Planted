@@ -415,6 +415,7 @@ DEPENDENCIES
   factory_girl
   faker
   fog
+  fog-aws
   foundation-rails
   jbuilder (~> 2.5)
   jquery-rails
