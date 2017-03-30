@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'turbolinks'
 gem 'faker'
 gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug', platform: :mri
