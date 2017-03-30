@@ -11,8 +11,8 @@ class Plant extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(date_last_watered){
-        this.setState( {last_watered: date_last_watered} )
+  handleClick(){
+        this.setState( {last_watered: plant.date_last_watered} )
   }
 
 
@@ -40,7 +40,7 @@ class Plant extends Component {
 
 
   render() {
-    let newPlant = this.state.plants.map((plant, index) => {
+    let plantList = this.state.plants.map((plant, index) => {
 
 //      DATE PLANTED
       let planted_date = plant.created_at
@@ -53,8 +53,6 @@ class Plant extends Component {
       if(this.state.last_watered !== null){
         this.state.last_watered = plant.date_last_watered;
       }
-
-
 //      NEEDS WATERING = date watered + cycle
       let expected_to_water = plant.date_last_watered + cycle_in_ms
       let date_expected_to_water = new Date(expected_to_water).toUTCString();
@@ -62,11 +60,10 @@ class Plant extends Component {
       let days_left_before_next_water = (expected_to_water - date)/86400000;
 
       return (
-        <div>
-
 
           <PlantItem
             id={plant.id}
+            key={plant.id}
             name={plant.name}
             planted={date_planted}
             cycle={plant.cycle}
@@ -74,15 +71,15 @@ class Plant extends Component {
             expect = {date_expected_to_water}
             time_left = {days_left_before_next_water}
             profile_photo={plant.profile_photo.url}
-            handleClick = {() => this.handleClick(plant.date_last_watered)}
+            handleClick = {() => this.handleClick()}
           />
-        </div>
+      
       )
     });
 
     return(
-      <div className="plant-index">
-        {newPlant}
+        <div className="plant-index">
+          {plantList}
       </div>
     )
   }
