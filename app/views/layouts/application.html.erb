@@ -6,7 +6,7 @@
 
   <body class="gen-nav">
     <div class="home-nav">
-      <h2>Plan🌱ed!</h2>
+      <h2>Plan<%= image_tag("sprout.png")%>ed!</h2>
       <ul >
       <% if user_signed_in? %>
         <li> <a  <%= link_to "Garden", user_plants_path(current_user) %> </a></li>
