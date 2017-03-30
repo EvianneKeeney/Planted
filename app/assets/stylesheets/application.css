@@ -14,23 +14,20 @@
  *= require_self
  */
 
-body {
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+.home-nav{
+  background-image: url("http://soilshs.co.uk/s/cc_images/teaserbox_13014441.jpg?t=1429022285");
+  max-height: 300px
 
-   margin: 20;
-   padding: 20;
-   background-image: url("http://soilshs.co.uk/s/cc_images/teaserbox_13014441.jpg?t=1429022285");
+}
+
+body {
+font-family: 'Spirax', cursive;
  }
 
 
- .column {
-   width:350px;
-   height: 350px;
-}
-
 .front {
-  width: 350px;
-  height: 350px;
+  /*width: 350px;
+  height: 350px;*/
   border-radius: 100%;
 }
 
@@ -41,11 +38,10 @@ body {
   border-radius: 100%;
 }
 
-
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
-
+  float: left;
 }
 	/* flip the pane when hovered */
 	.flip-container:hover .flipper {
@@ -56,7 +52,7 @@ body {
 	width: 350px;
 	height: 350px;
   border-radius: 100%;
-  background-color: white
+  background-color: transparent;
 
 }
 
@@ -65,16 +61,14 @@ body {
   transition-duration: 10s;
 	transition: 0.6s;
 	transform-style: preserve-3d;
-  width: 350px;
-  height: 350px;
-
+  /*width: 350px;
+  height: 350px;*/
 	position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
-
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -102,40 +96,43 @@ body {
 
 
 .plant-index {
+  height: 350px
+  /*-webkit-column-count: 3;
+  -moz-column-count: 3;
+
   column-count: 3;
+  grid-rows:100px (30px 60px);*/
 }
 
-.home-nav ul {
-   list-style: none;
-   background-color: none;
-   padding: 20;
-   margin: 0;
- }
-.home-nav li {
-   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-   font-size: 1.2em;
-   line-height: 40px;
-   height: 40px;
-   border-bottom: 1px solid #888;
- }
-
-.Home a {
+.home-nav h2 {
   text-align: left;
+  padding: 100;
+  font-size: 130px;
+  font-weight:bold;
+  text-shadow: 0 2px 2px #999;
+  color:#32CD32
+
 }
 
-.Profile a {
-  text-align: right;
-}
 
-.Sign-out a {
-  text-align: right;
-}
-.home-nav a {
-   text-decoration: none;
+ .home-nav li {
+   font-family: 'Spirax', cursive;
+   display: inline;
+   cursor: pointer;
+   box-shadow: 0 2px 2px #999;
    color: #fff;
-   display: block;
-   transition: .3s background-color;
+   font-size: 50px;
+   font-weight: normal;
+   line-height: 2em;
+   border-radius: 25px;
+   background-color: white;
+   margin: 0 20px 0 20px;
+   color:#32CD32
+
  }
+
+.home-nav a {
+}
 
 .home-nav a:hover {
    background-color: #005f5f;
@@ -150,17 +147,12 @@ body {
 @media screen and (min-width: 600px) {
    .home-nav li {
      width: 120px;
-     border-bottom: none;
-     height: 50px;
+     height: 100px;
+     width: 100px;
      line-height: 50px;
-     font-size: 1.4em;
+     font-size: 50px;
     }
 
-   /* Option 1 - Display Inline */
-   .home-nav li {
-     display: inline-block;
-     margin-right: -4px;
-    }
 }
 
 
@@ -173,7 +165,10 @@ body {
   max-width: 190px;
   width: 100%;
   color: #bbb;
-  font-size: 16px;
+  font-size: 25px;
+font-family: 'Spirax', cursive;
+background-color: white
+
   box-shadow: none !important;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
