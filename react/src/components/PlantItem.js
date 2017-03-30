@@ -20,7 +20,6 @@ const PlantItem = (props) => {
 
             <button onClick={props.handleClick}>
             <p>Last watered on: {props.lastWaterDate}</p>
-
             </button>
               <a href={`http://localhost:3000/plants/` + props.id}> {props.name} </a>
               <p>Planted on: {props.planted}</p>

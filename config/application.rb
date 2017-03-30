@@ -1,5 +1,5 @@
 require_relative 'boot'
-
+require 'fog/aws'
 require 'rails/all'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
