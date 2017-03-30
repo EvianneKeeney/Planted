@@ -3,10 +3,9 @@ import React from 'react';
 const PlantItem = (props) => {
 
   return(
-    <button onClick={props.handleClick} className="btn btn-primary" className= "squarebutton">
-      <div className="column" >
+
         <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
-          <div className="flipper">
+          <div className="flipper" onclick="this.classList.toggle('flipped')">
 
             <div className="front" >
               {props.profile_photo ?
@@ -19,19 +18,20 @@ const PlantItem = (props) => {
 
             <div className="back">
 
+            <button onClick={props.handleClick}>
+            <p>Last watered on: {props.lastWaterDate}</p>
+
+            </button>
               <a href={`http://localhost:3000/plants/` + props.id}> {props.name} </a>
               <p>Planted on: {props.planted}</p>
-              <p>Last watered on: {props.lastWaterDate}</p>
               <p>Cycle: {props.cycle}</p>
 
               <p>Expect to water me: {props.expect}</p>
               <p>Days you have left: {props.time_left}</p>
-
             </div>
           </div>
         </div>
-      </div>
-    </button>
+
   )
 }
 

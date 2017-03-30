@@ -2,18 +2,13 @@
 
 
 <h2>
-<% @plants.each do |plant| %>
-<%= button_to "Water", user_plants_path(current_user, plant.id), action: "update", method: :patch %>
+    <% @plants.each do |plant| %>
+      <%= button_to "Water", user_plant_path(current_user, plant.id),
+      
+      action: "update", method: :patch %>
 
-  <p id='main-app'></p></div>
 
+      <p id='main-app'></p>
+    <%end%>
 
-
-<%end%>
 </h2>
-
-
-<figure class="snip1566" position="left"><img src="https://d13yacurqjgara.cloudfront.net/users/537923/screenshots/1717101/plant-dribble.gif" alt="sq-sample19" />
-  <figcaption><%= link_to "Add Plant", new_plant_path%></figcaption>
-  <a href="#"></a>
-</figure>

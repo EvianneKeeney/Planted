@@ -31,14 +31,15 @@ class PlantsController < ApplicationController
   end
 
   def update
+
     @plant = Plant.find(params[:id])
     @plant.date_last_watered = Time.new
     if @plant.save
       flash[:notice] = "Plant watered!"
     else
-      flash[:notice] = "Err!"
+      flash[:notice] = "Error!"
     end
-    redirect_to user_plant_path(current_user, @plant)
+    redirect_to user_plants_path(current_user)
   end
 
   def destroy
