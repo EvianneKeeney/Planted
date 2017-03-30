@@ -11,10 +11,16 @@
   <body class="gen-nav">
     <div class="home-nav">
       <ul>
-      <li> <a class="Home" <%= link_to "Garden", plants_path %> </a></li>
       <% if user_signed_in? %>
+        <li> <a class="Home" <%= link_to "Garden", user_plants_path(current_user) %> </a></li>
         <li> <a class="Profile" <%= link_to "User Profile", edit_user_registration_path %> </a></li>
         <li> <a class="Sign Out" <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </a></li>
+        <figure class="snip1566" position="left"><img src="https://d13yacurqjgara.cloudfront.net/users/537923/screenshots/1717101/plant-dribble.gif" alt="sq-sample19" />
+          <figcaption><%= link_to "Add Plant", new_plant_path%></figcaption>
+          <a href="#"></a>
+        </figure>
+
+
         <%- else -%>
         <li class="Sign In"> <a <%= link_to "Sign In", new_user_session_path %> </a></li>
         <li class="Sign Up"> <a <%= link_to "Sign Up", new_user_registration_path %> </a></li>

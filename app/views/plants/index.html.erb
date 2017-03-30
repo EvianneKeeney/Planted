@@ -1,5 +1,14 @@
 <h1>Plants</h1>
 
 
+<h2>
+    <% @plants.each do |plant| %>
+      <%= button_to "Water", user_plant_path(current_user, plant.id),
+      
+      action: "update", method: :patch %>
 
-<%= link_to 'New Plant', new_plant_path %>
+
+      <p id='main-app'></p>
+    <%end%>
+
+</h2>

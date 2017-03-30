@@ -8,13 +8,25 @@
   <%= @plant.cycle %>
 </p>
 
-<p>
-  <strong>Water by:</strong>
 
+<!-- <%= button_to "Water", action: "update" %>
+<form method="patch " action="/users/#{current_user.id}/update" class="button_to"
+type="submit" />
+</form> -->
+
+<%= button_to "Water", user_plant_path(current_user, @plant), action: "update", method: :patch %>
+
+
+
+<p>
+  <strong>Timer:</strong>
+  <%= @plant.date_last_watered %>
 </p>
 
 
 
+<br>
+<br>
 
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Delete', @plant, method: :delete, data: { confirm: 'Are you sure?' } %>|

@@ -6,37 +6,40 @@ class PlantsController < ApplicationController
   end
 
   def show
+    @plants = Plant.find(params[:id])
   end
+
 
   def new
     @plant = Plant.new
   end
 
   def edit
+      @plant = Plant.find(params[:id])
   end
 
   def create
     @user = current_user
-    @plant = Plant.new(plant_params)
+    @plant = Plant.new(new_plant_params)
     @plant.user = @user
     if @plant.save
       flash[:notice] = "Plant added!"
-      redirect_to authenticated_root_path(@user)
+      redirect_to authenticated_root_path(@plant)
     else
       render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @plant.update(plant_params)
-        format.html { redirect_to @plant, notice: 'Plant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @plant }
-      else
-        format.html { render :edit }
-        format.json { render json: @plant.errors, status: :unprocessable_entity }
-      end
+
+    @plant = Plant.find(params[:id])
+    @plant.date_last_watered = Time.new
+    if @plant.save
+      flash[:notice] = "Plant watered!"
+    else
+      flash[:notice] = "Error!"
     end
+    redirect_to user_plants_path(current_user)
   end
 
   def destroy
@@ -54,6 +57,10 @@ class PlantsController < ApplicationController
     end
 
     def plant_params
-      params.require(:plant).permit(:name, :string, :cycle, :integer, :profile_photo, :remove_profile_photo, :date_last_watered)
+      params.permit(:name, :string, :cycle, :integer, :profile_photo, :remove_profile_photo, :date_last_watered)
+    end
+
+    def new_plant_params
+      params.require(:plant).permit(:name, :cycle, :profile_photo)
     end
 end

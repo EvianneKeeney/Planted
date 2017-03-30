@@ -11,8 +11,8 @@ class Plant extends Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(){
-        this.setState( {last_watered: new Date().getTime()} )
+  handleClick(date_last_watered){
+        this.setState( {last_watered: date_last_watered} )
   }
 
 
@@ -50,11 +50,10 @@ class Plant extends Component {
       let cycle_in_ms = plant.cycle * 86400000
 
 //      DATE WATERED
-      let last_watered = this.state.last_watered;
-      let date_last_watered_to_utc = new Date(last_watered).toUTCString();
       if(this.state.last_watered !== null){
-      plant.date_last_watered = date_last_watered_to_utc;
+        this.state.last_watered = plant.date_last_watered;
       }
+
 
 //      NEEDS WATERING = date watered + cycle
       let expected_to_water = plant.date_last_watered + cycle_in_ms
@@ -71,11 +70,11 @@ class Plant extends Component {
             name={plant.name}
             planted={date_planted}
             cycle={plant.cycle}
-            lastWaterDate = {plant.date_last_watered}
+            lastWaterDate = {this.state.last_watered}
             expect = {date_expected_to_water}
             time_left = {days_left_before_next_water}
             profile_photo={plant.profile_photo.url}
-            handleClick = {() => this.handleClick()}
+            handleClick = {() => this.handleClick(plant.date_last_watered)}
           />
         </div>
       )
