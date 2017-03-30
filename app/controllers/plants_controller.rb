@@ -22,6 +22,7 @@ class PlantsController < ApplicationController
     @user = current_user
     @plant = Plant.new(new_plant_params)
     @plant.user = @user
+    @plant.created_at = @plant.date_last_watered
     if @plant.save
       flash[:notice] = "Plant added!"
       redirect_to authenticated_root_path(@plant)
