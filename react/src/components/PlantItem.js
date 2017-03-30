@@ -3,7 +3,7 @@ import React from 'react';
 const PlantItem = (props) => {
 
     return(
-        <div className="flip-container"  onTouchStart="this.classList.toggle('hover');">
+        <div className="flip-container"  onClick={props.handleClick(props.id)} onTouchStart="this.classList.toggle('hover');">
           <div className="flipper" onClick="this.classList.toggle('flipped')">
 
             <div className="front" >
@@ -17,7 +17,7 @@ const PlantItem = (props) => {
 
             <div className="back">
 
-            <button className={props.className} onClick={props.handleClick}>
+            <button className={props.className} onClick={props.handleClick(props.id)}>
             <a href={`http://localhost:3000/plants/` + props.id}> {props.name} </a>
             <p>Last watered on: {props.lastWaterDate}</p>
               <p>Planted on: {props.planted}</p>

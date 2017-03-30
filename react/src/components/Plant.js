@@ -6,17 +6,19 @@ class Plant extends Component {
   super(props);
     this.state = {
       plants: [],
-      last_watered : null
+      last_watered: null
     }
     this.handleClick = this.handleClick.bind(this)
+    this.postWaterDate = this.postWaterDate.bind(this)
   }
 
-  handleClick(id){
-    this.postWaterDate()
+  handleClick(id) {
+    return () => {
+    this.postWaterDate(id)}
   }
 
   postWaterDate(id){
-    fetch(`http://localhost:3000//api/v1/plants/${id}`, {method:"PATCH"})
+    fetch(`http://localhost:3000/api/v1/plants/${id}`, {method:"PATCH"})
     .then(response => {
       if (response.ok) {
         return response;
@@ -26,11 +28,10 @@ class Plant extends Component {
         throw(error);
       }
     })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({plants: body });
-    })
+    .then(response => this.getData())
+
     .catch(error => console.error(`Error in fetch: ${error.message}`));
+
   }
 
   getData() {
@@ -50,12 +51,9 @@ class Plant extends Component {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-
-
   componentDidMount() {
     this.getData();
   }
-
 
   render() {
     let plantList = this.state.plants.map((plant, index) => {
@@ -94,7 +92,7 @@ class Plant extends Component {
             expect = {date_expected_to_water}
             time_left = {days_left_before_next_water}
             profile_photo={plant.profile_photo.url}
-            handleClick = {() => this.handleClick()}
+            handleClick = {this.handleClick}
             className = {className}
           />
 
