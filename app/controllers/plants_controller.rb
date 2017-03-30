@@ -25,13 +25,13 @@ class PlantsController < ApplicationController
     if @plant.save
       flash[:notice] = "Plant added!"
       redirect_to authenticated_root_path(@plant)
+      PlantMailer.new_plant(@plant).deliver
     else
       render :new
     end
   end
 
   def update
-
     @plant = Plant.find(params[:id])
     @plant.date_last_watered = Time.new
     if @plant.save

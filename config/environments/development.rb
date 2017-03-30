@@ -27,8 +27,29 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
+  config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      address: "localhost",
+      port: 1025
+    }
+
+    config.action_mailer.default_url_options = {
+      host: "localhost",
+      port: 3000
+    }
+
+    ActionMailer::Base.smtp_settings = {
+    address: "smtp.sendgrid.net",
+    port: "25",
+    authentication: :plain,
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: ENV['SENDGRID_DOMAIN']
+  }
+
+
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.

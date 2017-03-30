@@ -11,6 +11,7 @@ class Api::V1::PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
     @plant.date_last_watered = Time.new
     @plant.save
+    PlantMailer.water_plant(@plant).deliver
     render status: 201, json: {}
   end
 
