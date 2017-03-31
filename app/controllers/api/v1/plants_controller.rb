@@ -1,6 +1,6 @@
 class Api::V1::PlantsController < ApplicationController
   def index
-    render json: Plant.all
+    render json: Plant.all.sort
   end
 
   def show
@@ -15,7 +15,7 @@ class Api::V1::PlantsController < ApplicationController
     cycle_in_ms = @plant.cycle.to_f*86400
     to_water = date_last_watered_to_i + cycle_in_ms
     date_to_water = Time.at(to_water)
-    if Time.now.to_i > to_water
+    if true = true
       PlantMailer.water_plant(@plant).deliver
     end
     render status: 201, json: {}
