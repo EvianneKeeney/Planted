@@ -1,3 +1,128 @@
+/* line 5, /Users/launchacademy/Planted/app/assets/stylesheets/home.scss */
+h1 {
+  text-align: center;
+}
+// Place all the styles related to the plants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.flipper {
+
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;;
+
+}
+
+.button1 {
+  background-color: #4CAF50; /* Green */
+   border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+
+}
+/* line 1, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #fff;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 10, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 17, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 23, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 26, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 30, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 36, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 40, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 47, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* line 54, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 58, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 64, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 72, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 83, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 89, /Users/launchacademy/Planted/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,9 +135,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
 
 .home-nav{
   background-image: url("http://soilshs.co.uk/s/cc_images/teaserbox_13014441.jpg?t=1429022285");
@@ -27,13 +153,10 @@
   background-color: green;
   font-family: 'Spirax', cursive;
   font-size: 45px;
-  text-decoration: none;
-  margin: auto;
+  text-decoration: none
 }
-
 .reactWaterButton a{
-  color: grey;
-
+  color: black
 }
 
 .reactWaterButton a:hover{
@@ -69,40 +192,22 @@ font-family: 'Spirax', cursive;
 }
 
 /* entire container, keeps perspective */
-.shadow {
+.flip-container {
 	perspective: 1000px;
   float: left;
-  box-shadow: 10px 10px 5px #33ff33;
 }
 	/* flip the pane when hovered */
-.shadow:hover .flipper {
+	.flip-container:hover .flipper {
 		transform: rotateY(180deg);
 	}
 
-.shadow, .front, .back {
+.flip-container, .front, .back {
 	width: 350px;
 	height: 350px;
   border-radius: 100%;
   background-color: transparent;
-}
 
-.expiredShadow {
-	perspective: 1000px;
-  float: left;
-  box-shadow: 10px 10px 5px #ff0000;
 }
-	/* flip the pane when hovered */
-.expiredShadow:hover .flipper {
-	transform: rotateY(180deg);
-}
-
-.expiredShadow, .front, .back {
-	width: 350px;
-	height: 350px;
-  border-radius: 100%;
-  background-color: transparent;
-}
-
 
 /* flip speed goes here */
 .flipper {
@@ -111,7 +216,6 @@ font-family: 'Spirax', cursive;
   /*width: 350px;
   height: 350px;*/
 	position: relative;
-
 }
 
 /* hide back of pane during swap */
@@ -120,8 +224,6 @@ font-family: 'Spirax', cursive;
 	position: absolute;
 	top: 0;
 	left: 0;
-  box-shadow: 10px 10px 20px #212121;
-
 }
 
 /* front pane, placed above back */
@@ -195,7 +297,7 @@ font-family: 'Spirax', cursive;
 
 .home-nav a.active {
    background-color: #fff;
-   color: grey;
+   color: #fff;
    cursor: default;
  }
 

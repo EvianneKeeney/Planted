@@ -22,6 +22,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'fog-aws'
 gem 'sendgrid-ruby'
+gem 'puma', '~> 3.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -51,8 +52,7 @@ end
 
 group :production do
   gem 'rails_12factor'
-  # gem 'unicorn'
-  gem 'puma', '~> 3.0'
+  gem 'unicorn'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
