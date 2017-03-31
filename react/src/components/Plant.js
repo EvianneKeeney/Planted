@@ -18,7 +18,7 @@ class Plant extends Component {
   }
 
   postWaterDate(id){
-    fetch(`http://plant-a-garden.herokuapp.com/api/v1/plants/${id}`, {method:"PATCH"})
+    fetch(`https://plant-a-garden.herokuapp.com/api/v1/plants/${id}`, {method:"PATCH"})
     .then(response => {
       if (response.ok) {
         return response;
