@@ -9,8 +9,8 @@
       <h2>Planted!</h2>
       <ul >
       <% if user_signed_in? %>
-        <li> <a  <%= link_to "Garden", user_plants_path(current_user) %> </a></li>
-        <li> <a  <%= link_to " Profile", edit_user_registration_path %> </a></li>
+        <li> <a  <%= link_to "Garden  ", user_plants_path(current_user) %> </a></li>
+        <li> <a  <%= link_to " Profile  ", edit_user_registration_path %> </a></li>
         <figure class="snip1566" position="left"><img src="https://d13yacurqjgara.cloudfront.net/users/537923/screenshots/1717101/plant-dribble.gif" alt="sq-sample19" />
           <figcaption><%= link_to "Add Plant", new_plant_path%></figcaption>
 
@@ -19,11 +19,13 @@
 
 
         <%- else -%>
-        <li>  <a class="Sign In" <%= link_to "Sign In", new_user_session_path %> </a></li>
+        <li>  <a class="Sign In" <%= link_to "Sign In  ", new_user_session_path %> </a></li>
         <li>  <a class="Sign Up" <%= link_to "Sign Up", new_user_registration_path %> </a></li>
         <%end%>
       </ul>
     </div>
+    <br>
+    <br>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

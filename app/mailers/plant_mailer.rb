@@ -13,7 +13,7 @@ class PlantMailer < ApplicationMailer
 
     mail(
     to: plant.user.email,
-    subject: "Watered #{plant.name}"
+    subject: "Water #{plant.name}"
     )
   end
 end

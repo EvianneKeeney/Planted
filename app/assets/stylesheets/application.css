@@ -25,13 +25,26 @@
   height: 350px;
   width: 350px;
   background-color: green;
+  font-family: 'Spirax', cursive;
+  font-size: 45px;
+  text-decoration: none
 }
+.reactWaterButton a{
+  color: black
+}
+
+.reactWaterButton a:hover{
+  color: grey
+}
+
 
 .expired{
   border-radius:50%;
   height: 350px;
   width: 350px;
   background-color: red;
+  font-family: 'Spirax', cursive;
+  font-size: 50px;
 }
 
 body {
@@ -72,7 +85,6 @@ font-family: 'Spirax', cursive;
 
 /* flip speed goes here */
 .flipper {
-  transition-duration: 10s;
 	transition: 0.6s;
 	transform-style: preserve-3d;
   /*width: 350px;
@@ -110,7 +122,8 @@ font-family: 'Spirax', cursive;
 
 
 .plant-index {
-  height: 350px
+  height: 350px;
+  font-size: 32px
   /*-webkit-column-count: 3;
   -moz-column-count: 3;
 
@@ -125,7 +138,10 @@ font-family: 'Spirax', cursive;
   font-weight:bold;
   text-shadow: 0 2px 2px #999;
   color:#32CD32
+}
 
+.new_user h2{
+  color:#32CD32
 }
 
 
@@ -142,14 +158,15 @@ font-family: 'Spirax', cursive;
    background-color: white;
    margin: 0 20px 0 20px;
    color:#32CD32
-
  }
 
 .home-nav a {
 }
 
 .home-nav a:hover {
-   background-color: #005f5f;
+  display: inline;
+  border-radius: 25px;
+  background-color: #005f5f;
  }
 
 .home-nav a.active {
@@ -240,6 +257,8 @@ background-color: white
   left: 0;
   right: 0;
   z-index: 1;
+  font-size: 44px;
+  color: white;
 
 }
 
@@ -275,4 +294,9 @@ background-color: white
 body {
   background-color: #212121;
   text-align: center;
+  font-size: 26px
+}
+
+p{
+  font-size: 26px
 }
