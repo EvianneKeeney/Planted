@@ -3,9 +3,8 @@ import React from 'react';
 const PlantItem = (props) => {
 
     return(
-        <div className="flip-container"  onClick={props.handleClick(props.id)} onTouchStart="this.classList.toggle('hover');">
-          <div className="flipper" onClick="this.classList.toggle('flipped')">
-
+        <div className="flip-container"  onClick={props.handleClick(props.id)} >
+          <div className="flipper">
             <div className="front" >
               {props.profile_photo ?
                 <a >
@@ -14,12 +13,9 @@ const PlantItem = (props) => {
                 <p > Photo Unavailable  </p>
               }
             </div>
-
             <div className="back">
-
             <button className={props.className} onClick={props.handleClick(props.id)}>
-            <a href={`https://plant-a-garden.herokuapp.com/plants/` + props.id}> {props.name} </a>
-
+            <a href={`http://localhost:3000/plants/` + props.id}> {props.name} </a>
               <p>Days you have left: </p>
               <p>{props.time_left}</p>
 
