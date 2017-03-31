@@ -9,7 +9,6 @@ class PlantsController < ApplicationController
     @plants = Plant.find(params[:id])
   end
 
-
   def new
     @plant = Plant.new
   end

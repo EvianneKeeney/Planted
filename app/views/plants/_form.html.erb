@@ -1,3 +1,5 @@
+<br>
+<br>
 <%= form_for(plant) do |f| %>
   <% if plant.errors.any? %>
     <div id="error_explanation">
@@ -13,11 +15,14 @@
 
   <div class="field">
     <%= f.label :name %>
+    <br>
     <%= f.text_field :name %>
   </div>
-
+<br>
+<br>
   <div class="field">
-    <%= f.label :cycle %>
+    <%= f.label "Cycle in Days" %>
+    <br>
     <%= f.text_field :cycle %>
   </div>
 

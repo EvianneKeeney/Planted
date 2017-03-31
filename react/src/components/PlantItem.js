@@ -18,13 +18,11 @@ const PlantItem = (props) => {
             <div className="back">
 
             <button className={props.className} onClick={props.handleClick(props.id)}>
-            <a href={`https://plant-a-garden.herokuapp.com/plants/` + props.id}> {props.name} </a>
-            <p>Last watered on: {props.lastWaterDate}</p>
-              <p>Planted on: {props.planted}</p>
-              <p>Cycle: {props.cycle}</p>
+            <a href={`http://localhost:3000/plants/` + props.id}> {props.name} </a>
 
-              <p>Expect to water me: {props.expect}</p>
-              <p>Days you have left: {props.time_left}</p>
+              <p>Days you have left: </p>
+              <p>{props.time_left}</p>
+
               </button>
             </div>
           </div>
