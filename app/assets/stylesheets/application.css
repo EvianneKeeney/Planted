@@ -27,10 +27,13 @@
   background-color: green;
   font-family: 'Spirax', cursive;
   font-size: 45px;
-  text-decoration: none
+  text-decoration: none;
+  margin: auto;
 }
+
 .reactWaterButton a{
-  color: grey
+  color: grey;
+
 }
 
 .reactWaterButton a:hover{
@@ -66,22 +69,40 @@ font-family: 'Spirax', cursive;
 }
 
 /* entire container, keeps perspective */
-.flip-container {
+.shadow {
 	perspective: 1000px;
   float: left;
+  box-shadow: 10px 10px 5px #33ff33;
 }
 	/* flip the pane when hovered */
-	.flip-container:hover .flipper {
+.shadow:hover .flipper {
 		transform: rotateY(180deg);
 	}
 
-.flip-container, .front, .back {
+.shadow, .front, .back {
 	width: 350px;
 	height: 350px;
   border-radius: 100%;
   background-color: transparent;
-
 }
+
+.expiredShadow {
+	perspective: 1000px;
+  float: left;
+  box-shadow: 10px 10px 5px #ff0000;
+}
+	/* flip the pane when hovered */
+.expiredShadow:hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.expiredShadow, .front, .back {
+	width: 350px;
+	height: 350px;
+  border-radius: 100%;
+  background-color: transparent;
+}
+
 
 /* flip speed goes here */
 .flipper {
@@ -90,6 +111,7 @@ font-family: 'Spirax', cursive;
   /*width: 350px;
   height: 350px;*/
 	position: relative;
+
 }
 
 /* hide back of pane during swap */
@@ -98,6 +120,8 @@ font-family: 'Spirax', cursive;
 	position: absolute;
 	top: 0;
 	left: 0;
+  box-shadow: 10px 10px 20px #212121;
+
 }
 
 /* front pane, placed above back */

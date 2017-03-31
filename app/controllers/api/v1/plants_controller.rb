@@ -1,6 +1,6 @@
 class Api::V1::PlantsController < ApplicationController
   def index
-    render json: Plant.all
+    render json: Plant.all.sort
   end
 
   def show

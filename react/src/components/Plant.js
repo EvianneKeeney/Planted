@@ -66,7 +66,6 @@ class Plant extends Component {
       let cycle_in_ms = plant.cycle * 86400000
 
 //      DATE WATERED
-
       this.state.last_watered = plant.date_last_watered;
       let ms_date_last_watered = new Date(this.state.last_watered).getTime();
 
@@ -76,11 +75,15 @@ class Plant extends Component {
       let date = new Date().getTime()
       let days_left_before_next_water = (expected_to_water - date)/86400000;
       let className
+      let shadowName
       if (days_left_before_next_water < 0){
         className = "expired"
+        shadowName = "expiredShadow"
         days_left_before_next_water = "Click to start cycle"
       }
-      else {className = "reactWaterButton"}
+      else {
+        className = "reactWaterButton"
+        shadowName = "shadow"}
 
       return (
           <PlantItem
@@ -95,6 +98,7 @@ class Plant extends Component {
             profile_photo={plant.profile_photo.url}
             handleClick = {this.handleClick}
             className = {className}
+            shadowName = {shadowName}
           />
       )
     });
