@@ -30,7 +30,7 @@
   text-decoration: none
 }
 .reactWaterButton a{
-  color: black
+  color: grey
 }
 
 .reactWaterButton a:hover{
@@ -171,7 +171,7 @@ font-family: 'Spirax', cursive;
 
 .home-nav a.active {
    background-color: #fff;
-   color: #fff;
+   color: grey;
    cursor: default;
  }
 
