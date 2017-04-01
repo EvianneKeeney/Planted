@@ -48,7 +48,6 @@ Rails.application.configure do
     domain: ENV['SENDGRID_DOMAIN']
   }
 
-
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
 
