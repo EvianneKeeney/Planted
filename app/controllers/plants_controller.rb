@@ -8,7 +8,6 @@ class PlantsController < ApplicationController
   def show
     @plants = Plant.find(params[:id])
     @ip = request.remote_ip
-    binding.pry
     @geolocation = Geolocation.new(@ip)
     @temperature = Temperature.new(@geolocation)
   end
