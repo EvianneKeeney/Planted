@@ -24,6 +24,7 @@ gem 'fog-aws'
 gem 'sendgrid-ruby'
 gem 'puma', '~> 3.0'
 gem 'sinatra', github: 'sinatra/sinatra'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug', platform: :mri
