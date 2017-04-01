@@ -15,3 +15,11 @@ module Planted
     config.active_job.queue_adapter = :sidekiq
   end
 end
+
+Sidekiq.configure_server do |config|
+  config.redis = {:url => url}
+end
+
+Sidekiq.configure_client do |config|
+  config.redis = {:url => url, :size => 30}
+end
