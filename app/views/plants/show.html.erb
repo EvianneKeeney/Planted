@@ -1,44 +1,39 @@
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br>
+<p>
+  <strong>Name:</strong>
+  <%= @plant.name %>
+</p>
 
+<p>
+  <strong>Cycle:</strong>
+  <%= @plant.cycle %>
+</p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @plant.name %>
-  </p>
+<p>
+  <strong>Planted on:</strong>
+  <%= @plant.created_at %>
+</p>
 
-  <p>
-    <strong>Cycle:</strong>
-    <%= @plant.cycle %>
-  </p>
+<p>
+  <strong>Date Last Watered:</strong>
+  <%= @plant.date_last_watered %>
+</p>
 
-  <p>
-    <strong>Planted on:</strong>
-    <%= @plant.created_at %>
-  </p>
+<p>
+  <strong>Expect to water me:</strong>
+  <% date_last_watered_to_i = @plant.date_last_watered.to_i%>
+  <% cycle_in_ms = @plant.cycle.to_f*86400%>
+  <% to_water = date_last_watered_to_i + cycle_in_ms%>
+  <% date_to_water = Time.at(to_water)%>
+  <%= date_to_water%>
+</p>
 
-  <p>
-    <strong>Date Last Watered:</strong>
-    <%= @plant.date_last_watered %>
-  </p>
-
-  <p>
-    <strong>Expect to water me:</strong>
-    <% date_last_watered_to_i = @plant.date_last_watered.to_i%>
-    <% cycle_in_ms = @plant.cycle.to_f*86400%>
-    <% to_water = date_last_watered_to_i + cycle_in_ms%>
-    <% date_to_water = Time.at(to_water)%>
-    <%= date_to_water%>
-  </p>
-
-  <p>
-    <strong>Days left:</strong>
-    <% time_left = to_water - Time.now.to_i %>
-    <% date_time_left = time_left/86400 %>
-    <%= date_time_left.to_f %>
-  </p>
+<p>
+  <strong>Days left:</strong>
+  <% time_left = to_water - Time.now.to_i %>
+  <% date_time_left = time_left/86400 %>
+  <%= date_time_left.to_f %>
+</p>
 
 
 
