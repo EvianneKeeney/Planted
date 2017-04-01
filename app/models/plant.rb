@@ -6,4 +6,5 @@ class Plant < ApplicationRecord
   validates :user, presence: true
 
   mount_uploader :profile_photo, ProfilePhotoUploader
+
 end

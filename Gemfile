@@ -27,6 +27,7 @@ gem 'sinatra', github: 'sinatra/sinatra'
 gem 'redis'
 gem 'delayed_job_active_record'
 gem 'daemons'
+gem "dotenv-rails"
 
 group :development, :test do
   gem 'byebug', platform: :mri

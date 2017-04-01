@@ -1,5 +1,5 @@
-class Api::V1::WeathersController < ApplicationController
+class Api::V1::WeatherController < ApplicationController
   def index
-      render json: weather
+    render json: Weather.all
   end
 end
