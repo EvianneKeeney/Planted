@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-require 'sidekiq/web'
-mount Sidekiq::Web => "/sidekiq"
+  require 'sidekiq/web'
+  mount Sidekiq::Web => "/sidekiq"
   get 'home/index'
 
   devise_for :users
@@ -16,7 +16,7 @@ mount Sidekiq::Web => "/sidekiq"
   end
 
   resources :plants
-
+  
 
   resources :users do
     resources :plants
@@ -31,7 +31,7 @@ mount Sidekiq::Web => "/sidekiq"
 
   namespace :api do
     namespace :v1 do
-      resources :timers
+      resources :weathers
     end
   end
 
