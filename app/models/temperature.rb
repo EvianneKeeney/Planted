@@ -4,9 +4,8 @@ require "json"
 class Temperature
   attr_reader :temperature
 
-  def initialize(geolocation)
+  def initialize
     @temp_data = get_temperature
-    @geolocation = geolocation
   end
 
   def humidity
@@ -33,7 +32,7 @@ class Temperature
 
   def uri
     key = ENV["WEATHER_KEY"]
-    URI("https://api.darksky.net/forecast/#{key}/#{@geolocation}")
+    URI("https://api.darksky.net/forecast/#{key}/39.9526,-75.1652")
   end
 
 end
