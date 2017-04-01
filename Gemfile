@@ -26,6 +26,7 @@ gem 'puma', '~> 3.0'
 gem 'sinatra', github: 'sinatra/sinatra'
 gem 'redis'
 gem 'delayed_job_active_record'
+gem 'daemons'
 
 group :development, :test do
   gem 'byebug', platform: :mri
