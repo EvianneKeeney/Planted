@@ -35,14 +35,21 @@
   <%= date_time_left.to_f %>
 </p>
 
+Temperature:
+<p><%= @temperature.actual_temperature %> </p>
 
+Humidity:
+<p><%= @temperature.humidity %> </p>
 
-
-
-<!-- <%= button_to "Water", action: "update" %>
-<form method="patch " action="/users/#{current_user.id}/update" class="button_to"
-type="submit" />
-</form> -->
+Weekly Forecast
+<ul>
+  <% 8.times do |count| %>
+    <li>
+      <%= @temperature.day(count)  %>:
+      <%= @temperature.daily_temp(count) %>
+    </li>
+  <% end %>
+<ul>
 
 <%= button_to "Water", user_plant_path(current_user, @plant), action: "update", method: :patch %>
 

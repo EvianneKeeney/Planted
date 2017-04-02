@@ -3,7 +3,7 @@ import PlantItem from './PlantItem';
 
 class Plant extends Component {
   constructor(props) {
-  super(props);
+    super(props);
     this.state = {
       plants: [],
       last_watered: null
@@ -14,34 +14,34 @@ class Plant extends Component {
 
   handleClick(id) {
     return () => {
-    this.postWaterDate(id)}
-  }
+      this.postWaterDate(id)}
+    }
 
-  postWaterDate(id){
-    fetch(`http://localhost:3000/api/v1/plants/${id}`, {method:"PATCH"})
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} ($response.statusText)`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => this.getData())
-
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-
-  }
-
-  getData() {
-    fetch('http://localhost:3000/api/v1/plants.json')
+    postWaterDate(id){
+      fetch(`http://localhost:3000/api/v1/plants/${id}`, {method:"PATCH"})
       .then(response => {
         if (response.ok) {
           return response;
         } else {
           let errorMessage = `${response.status} ($response.statusText)`,
-            error = new Error(errorMessage);
+          error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => this.getData())
+
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+
+    }
+
+    getData() {
+      fetch('http://localhost:3000/api/v1/plants.json')
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} ($response.statusText)`,
+          error = new Error(errorMessage);
           throw(error);
         }
       })
@@ -50,43 +50,43 @@ class Plant extends Component {
         this.setState({plants: body});
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
-  componentDidMount() {
-    this.getData();
-  }
+    }
+    componentDidMount() {
+      this.getData();
+    }
 
-  render() {
-    let plantList = this.state.plants.map((plant, index) => {
+    render() {
+      let plantList = this.state.plants.map((plant, index) => {
 
-//      DATE PLANTED
-      let planted_date = plant.created_at
-      let date_planted = new Date(planted_date).toUTCString();
+        //      DATE PLANTED
+        let planted_date = plant.created_at
+        let date_planted = new Date(planted_date).toUTCString();
 
-//      CYCLE
-      let cycle_in_ms = plant.cycle * 86400000
+        //      CYCLE
+        let cycle_in_ms = plant.cycle * 86400000
 
-//      DATE WATERED
-      this.state.last_watered = plant.date_last_watered;
-      let ms_date_last_watered = new Date(this.state.last_watered).getTime();
+        //      DATE WATERED
+        this.state.last_watered = plant.date_last_watered;
+        let ms_date_last_watered = new Date(this.state.last_watered).getTime();
 
-//      NEEDS WATERING = date watered + cycle
-      let expected_to_water = ms_date_last_watered + cycle_in_ms
-      let date_expected_to_water = new Date(expected_to_water).toUTCString();
-      let date = new Date().getTime()
-      let days_left_before_next_water = (expected_to_water - date)/86400000;
-      let className
-      let shadowName
-      if (days_left_before_next_water < 0){
-        className = "expired"
-        shadowName = "expiredShadow"
-        days_left_before_next_water = "Click to start cycle"
-      }
-      else {
-        className = "reactWaterButton"
-        shadowName = "shadow"}
+        //      NEEDS WATERING = date watered + cycle
+        let expected_to_water = ms_date_last_watered + cycle_in_ms
+        let date_expected_to_water = new Date(expected_to_water).toUTCString();
+        let date = new Date().getTime()
+        let days_left_before_next_water = (expected_to_water - date)/86400000;
+        let className
+        let shadowName
+        if (days_left_before_next_water < 0){
+          className = "expired"
+          shadowName = "expiredShadow"
+          days_left_before_next_water = "Click to start cycle"
+        }
+        else {
+          className = "reactWaterButton"
+          shadowName = "shadow"}
 
-      return (
-          <PlantItem
+          return (
+            <PlantItem
             id={plant.id}
             key={plant.id}
             name={plant.name}
@@ -99,15 +99,15 @@ class Plant extends Component {
             handleClick = {this.handleClick}
             className = {className}
             shadowName = {shadowName}
-          />
-      )
-    });
-    return(
-        <div className="plant-index">
+            />
+          )
+        });
+        return(
+          <div className="plant-index">
           {plantList}
-      </div>
-    )
-  }
-};
+          </div>
+        )
+      }
+    };
 
-export default Plant;
+    export default Plant;

@@ -7,6 +7,8 @@ class PlantsController < ApplicationController
 
   def show
     @plants = Plant.find(params[:id])
+    @temperature = Temperature.new(current_user.latitude, current_user.longitude)
+
   end
 
   def new
@@ -24,7 +26,7 @@ class PlantsController < ApplicationController
     if @plant.save
       flash[:notice] = "Plant added!"
       redirect_to authenticated_root_path(@plant)
-      PlantMailer.new_plant(@plant).deliver
+      PlantMailer.new_plant(@plant).deliver_later
     else
       render :new
     end
@@ -48,6 +50,7 @@ class PlantsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
     private
 

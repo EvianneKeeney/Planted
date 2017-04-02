@@ -37,6 +37,22 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country, autocomplete: "off" %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
