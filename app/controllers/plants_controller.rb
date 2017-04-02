@@ -7,7 +7,8 @@ class PlantsController < ApplicationController
 
   def show
     @plants = Plant.find(params[:id])
-    @temperature = Temperature.new
+    @temperature = Temperature.new(current_user.latitude, current_user.longitude)
+
   end
 
   def new
