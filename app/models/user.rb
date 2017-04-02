@@ -15,4 +15,5 @@ class User < ApplicationRecord
   def address
      [city, state, country].compact.join(',')
    end
+
 end

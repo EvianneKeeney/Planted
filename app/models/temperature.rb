@@ -24,7 +24,8 @@ class Temperature
 
   def day(day)
     weekday = @temp_data["daily"]["data"][day]["time"]
-    Time.at(weekday)
+    t = Time.at(weekday)
+    letter = t.strftime("%d")
   end
 
   def get_temperature
@@ -34,7 +35,6 @@ class Temperature
 
   def uri
     key = ENV["WEATHER_KEY"]
-    binding.pry
     URI("https://api.darksky.net/forecast/#{key}/#{@latitude},#{@longitude}")
   end
 
