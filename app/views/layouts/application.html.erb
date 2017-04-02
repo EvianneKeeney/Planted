@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet">    <%= csrf_meta_tags %>
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
@@ -8,16 +10,6 @@
     <br>
     <div class="home-nav">
       <%= link_to authenticated_root_path do %> <h2 style="underline: none">Planted!</h2> <%end%>
-      <div class="wrap">
-        <% 8.times do |count| %>
-        <div class = "blocks"><%= @temperature.day(count)  %>:
-          <br>
-          <%= @temperature.daily_temp(count) %>
-        </div>
-        <% end %>
-      </div >
-
-
 
       <% if user_signed_in? %>
         <li> <a  <%= link_to "Garden  ", authenticated_root_path %> </a></li>

@@ -15,17 +15,17 @@ class Temperature
   end
 
   def actual_temperature
-    @temp_data["currently"]["temperature"]
+  @temp_data["currently"]["temperature"]
   end
 
   def daily_temp(day)
-    @temp_data["daily"]["data"][day]["icon"]
+    @temp_data["daily"]["data"][day]["icon"] 
   end
 
   def day(day)
     weekday = @temp_data["daily"]["data"][day]["time"]
     t = Time.at(weekday)
-    letter = t.strftime("%d")
+    letter = t.strftime("%a %d")
   end
 
   def get_temperature
