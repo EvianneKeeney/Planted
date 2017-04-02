@@ -3,12 +3,13 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
+    @temperature = Temperature.new(current_user.latitude, current_user.longitude)
+
   end
 
   def show
     @plants = Plant.find(params[:id])
     @temperature = Temperature.new(current_user.latitude, current_user.longitude)
-
   end
 
   def new
