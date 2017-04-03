@@ -10,7 +10,7 @@
     <br>
     <div class="home-nav">
       <%= link_to authenticated_root_path do %> <h2 style="underline: none">Planted!</h2> <%end%>
-
+      <ul>
       <% if user_signed_in? %>
         <li> <a  <%= link_to "Garden  ", authenticated_root_path %> </a></li>
         <li> <a  <%= link_to " Profile  ", edit_user_registration_path %> </a></li>
