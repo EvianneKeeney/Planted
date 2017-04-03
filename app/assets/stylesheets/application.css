@@ -20,7 +20,9 @@
   position: relative;
   box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
 
-
+.showlink{
+  color: white
+}
 
 .wrap{
   position: absolute;
@@ -210,11 +212,6 @@ font-family: 'Spirax', cursive;
 .plant-index {
   height: 350px;
   font-size: 32px
-  /*-webkit-column-count: 3;
-  -moz-column-count: 3;
-
-  column-count: 3;
-  grid-rows:100px (30px 60px);*/
 }
 
 .home-nav h2 {
