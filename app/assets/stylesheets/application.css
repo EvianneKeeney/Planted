@@ -18,11 +18,22 @@
   background-image: url("http://soilshs.co.uk/s/cc_images/teaserbox_13014441.jpg?t=1429022285");
   max-height: 300px;
   position: relative;
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+
+.showlink{
+  color: white
 }
 
 .wrap{
   position: absolute;
   top:0;
+  right:0;
+  padding: 100;
+}
+
+.wrapA{
+  position: absolute;
+  top: 55px;
   right:0;
   padding: 100;
 }
@@ -37,22 +48,37 @@
 
 
 .blocks{
-  float: right;
+  display: inline-block;
+  position: relative;
+  width: 65px;
+  height:65px;
+  padding: 10px 10px 10px 10px ;
+  margin: 0;
+  font-size: 27px;
+  color: #ffdbac;
+  font-family: 'Slabo 27px', serif;
+}
+
+.weatherblocks{
   display: inline-block;
   width: 65px;
   height:65px;
- padding: 10px 10px 10px 10px ;
- border: 5px solid gray;
- margin: 0;
- font-size: 18px;
- color: white;
-}
+  padding: 10px 10px 10px 10px ;
+  margin: 0;
+  font-size: 25px;
+  color: white;
+  font-family: 'Slabo 27px', serif;
+  background: -webkit-linear-gradient(#ffdbac,#8d5524);
+  border-radius: 30%;
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5)
 
+}
 
 .humblocks{
   text-align: center;
- font-size: 18px;
- color: white;
+  display: inline-block;
+  font-size: 25px
+  color: white;
 }
 
 
@@ -186,11 +212,6 @@ font-family: 'Spirax', cursive;
 .plant-index {
   height: 350px;
   font-size: 32px
-  /*-webkit-column-count: 3;
-  -moz-column-count: 3;
-
-  column-count: 3;
-  grid-rows:100px (30px 60px);*/
 }
 
 .home-nav h2 {

@@ -1,3 +1,45 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.formstyle{
+  color: #fff;
+  border: 6px solid #bbb;
+  height: 800px;
+  width: 600px;
+  margin:0 auto;
+  border-radius: 10%;
+box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+
+.formeditstyle{  
+  color: #fff;
+  border: 6px solid #bbb;
+  height: 800px;
+  width: 600px;
+  margin:0 auto;
+  border-radius: 10%;
+box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+
+
+.plantformstyle{
+  color: #fff;
+  border: 3px solid #bbb;
+  height: 350px;
+  width: 500px;
+  margin:0 auto;
+  border-radius: 10%;
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+
+  .plantshowstyle{
+    color: #fff;
+    border: 3px solid #bbb;
+    height: 510px;
+    width: 500px;
+    margin:0 auto;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+
+    .myPlants{
+      float:right;
+
+    }

@@ -15,13 +15,14 @@ const PlantItem = (props) => {
         </div>
         <div className="back">
           <button className={props.className} onClick={props.handleClick(props.id)}>
-            <a href={`http://localhost:3000/plants/` + props.id}> {props.name} </a>
+          <div className="showlink" href={`https://plant-a-garden.herokuapp.com/plants/` + props.id}> {props.name} </div>
               <p>Days you have left: </p>
               <p>{props.time_left}</p>
           </button>
         </div>
       </div>
     </div>
+
   )}
 
 export default PlantItem;

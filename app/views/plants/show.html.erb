@@ -1,4 +1,6 @@
 <br><br><br><br>
+<div class="plantshowstyle">
+
 <p>
   <strong>Name:</strong>
   <%= @plant.name %>
@@ -11,12 +13,14 @@
 
 <p>
   <strong>Planted on:</strong>
-  <%= @plant.created_at %>
+  <br><br>
+  <%= @plant.created_at.strftime("%a, %m/%d/%Y at %I:%M%p") %>
 </p>
 
 <p>
   <strong>Date Last Watered:</strong>
-  <%= @plant.date_last_watered %>
+  <br><br>
+  <%= @plant.date_last_watered.strftime("%a, %m/%d/%Y at %I:%M%p") %>
 </p>
 
 <p>
@@ -25,19 +29,19 @@
   <% cycle_in_ms = @plant.cycle.to_f*86400%>
   <% to_water = date_last_watered_to_i + cycle_in_ms%>
   <% date_to_water = Time.at(to_water)%>
-  <%= date_to_water%>
+  <br><br>
+  <%= date_to_water.strftime("%a, %m/%d/%Y at %I:%M%p")%>
 </p>
 
 <p>
   <strong>Days left:</strong>
   <% time_left = to_water - Time.now.to_i %>
   <% date_time_left = time_left/86400 %>
+  <br><br>
   <%= date_time_left.to_f %>
 </p>
 
-<%= button_to "Water", user_plant_path(current_user, @plant), action: "update", method: :patch %>
-
-
+</div>
 
 <br>
 <br>
@@ -45,4 +49,4 @@
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Delete', @plant, method: :delete, data: { confirm: 'Are you sure?' } %>|
 
-<%= link_to 'Back', plants_path %>
+<%= link_to 'Back', authenticated_root_path %>

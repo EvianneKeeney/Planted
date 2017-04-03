@@ -1,7 +1,42 @@
 
-<p class = "humblocks">Temperature:<%= @temperature.actual_temperature %></p>
+<span class = "btn">Temp:<%= @temperature.actual_temperature %> &#8457</span>
+<span class = "btn">Humidity:<%= @temperature.humidity %></span>
 
-<p class = "humblocks">Humidity:<%= @temperature.humidity %></p>
+<div class="wrap">
+  <% 8.times do |count| %>
+  <div class = "blocks"><%= @temperature.day(count)  %>: </div>
+  <% end %>
+</div >
+<br>
+
+
+<div class="wrapA">
+  <% 8.times do |count| %>
+    <div class = "weatherblocks">
+      <% if @temperature.daily_temp(count) === "clear-day" %>
+        <img src= "https://image.flaticon.com/icons/svg/118/118755.svg">
+        <%elsif @temperature.daily_temp(count) === "clear-night"%>
+        <img src= "https://image.flaticon.com/icons/svg/25/25665.svg">
+        <%elsif @temperature.daily_temp(count) === "rain"%>
+        <img src= "https://image.flaticon.com/icons/svg/12/12184.svg">
+        <%elsif @temperature.daily_temp(count) === "snow"%>
+        <img src= "https://image.flaticon.com/icons/svg/110/110315.svg">
+        <%elsif @temperature.daily_temp(count) === "sleet"%>
+        <img src="https://image.flaticon.com/icons/svg/1/1756.svg">
+        <%elsif @temperature.daily_temp(count) === "wind"%>
+        <img src= "https://image.flaticon.com/icons/svg/3/3491.svg">
+        <%elsif @temperature.daily_temp(count) === "fog"%>
+        <img src= "https://image.flaticon.com/icons/svg/134/134120.svg">
+        <%elsif @temperature.daily_temp(count) === "cloudy"%>
+        <img src= "https://image.flaticon.com/icons/svg/131/131077.svg">
+        <%elsif @temperature.daily_temp(count) === "partly-cloudy-day"%>
+        <img src= "https://image.flaticon.com/icons/svg/359/359061.svg">
+        <%else @temperature.daily_temp(count) === "partly-cloudy-night"%>
+        <img src= "https://image.flaticon.com/icons/svg/12/12164.svg">
+      <% end %>
+  </div>
+  <%end%>
+</div >
 
 
 <div>
