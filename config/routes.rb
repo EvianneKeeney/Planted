@@ -10,13 +10,19 @@ Rails.application.routes.draw do
       root 'plants#index', as: :authenticated_root
     end
 
+    devise_scope :user do
+      authenticated :user do
+        resources :plants
+      end
+    end
+
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
 
   resources :plants
-  
+
 
   resources :users do
     resources :plants

@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+    @plants = @user.plants
   end
 
   def create
