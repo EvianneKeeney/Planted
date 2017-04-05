@@ -14,13 +14,13 @@
 <p>
   <strong>Planted on:</strong>
   <br><br>
-  <%= @plant.created_at.strftime("%a, %m/%d/%Y at %I:%M%p") %>
+  <%= @plant.created_at.to_datetime.strftime("%a, %m/%d/%Y at %I:%M%p") %>
 </p>
 
 <p>
   <strong>Date Last Watered:</strong>
   <br><br>
-  <%= @plant.date_last_watered.strftime("%a, %m/%d/%Y at %I:%M%p") %>
+  <%= @plant.date_last_watered.to_datetime.strftime("%a, %m/%d/%Y at %I:%M%p") %>
 </p>
 
 <p>
@@ -30,7 +30,7 @@
   <% to_water = date_last_watered_to_i + cycle_in_ms%>
   <% date_to_water = Time.at(to_water)%>
   <br><br>
-  <%= date_to_water.strftime("%a, %m/%d/%Y at %I:%M%p")%>
+  <%= date_to_water.to_datetime.strftime("%a, %m/%d/%Y at %I:%M%p")%>
 </p>
 
 <p>
