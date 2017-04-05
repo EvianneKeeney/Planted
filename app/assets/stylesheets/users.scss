@@ -9,7 +9,14 @@
   width: 600px;
   margin:0 auto;
   border-radius: 10%;
-box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+}
+
+
+.editStyle{
+  columns: 500px, 2;
+}
+
 
 .formeditstyle{
   color: #fff;
@@ -18,8 +25,38 @@ box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
   width: 600px;
   margin:0 auto;
   border-radius: 10%;
-box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+  float: left
+}
 
+.myPlants{
+  color: #fff;
+  border: 6px solid #bbb;
+  height: 1200px;
+  width: 600px;
+  margin:0 auto;
+  border-radius: 10%;
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+  float: right;
+}
+
+.myPlants ul{
+  list-style:none;
+}
+
+.myPlants ul li a{
+  list-style: none;
+  font-family: 'Spirax', cursive;
+  display: block;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 25px;
+  margin: 0 20px 0 20px;
+}
 
 .plantformstyle{
   color: #fff;
@@ -28,21 +65,19 @@ box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
   width: 500px;
   margin:0 auto;
   border-radius: 10%;
-  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+}
 
-  .plantshowstyle{
-    color: #fff;
-    border: 3px solid #bbb;
-    height: 510px;
-    width: 500px;
-    margin:0 auto;
-    border-radius: 10%;
-    box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);}
+.plantshowstyle{
+  color: #fff;
+  border: 3px solid #bbb;
+  height: 510px;
+  width: 500px;
+  margin:0 auto;
+  border-radius: 10%;
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+}
 
-    .myPlants{
-      float:right;
-
-    }
 
 .logstyle{
   color: #fff;
