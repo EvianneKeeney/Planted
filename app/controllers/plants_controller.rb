@@ -26,7 +26,7 @@ class PlantsController < ApplicationController
     if @plant.save
       flash[:notice] = "Plant added!"
       redirect_to authenticated_root_path(@plant)
-      PlantMailer.new_plant(@plant).deliver_later
+      PlantMailer.new_plant(@plant).deliver
     else
       render :new
     end
