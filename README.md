@@ -14,6 +14,13 @@ This is an application that allows users to add plants to a dashboard garden and
 
 Heroku link: https://plant-a-garden.herokuapp.com/
 
+To run:
+
+NPM start
+Rails C
+Mailcatcher
+Locate localhost:3000 and localhost:1080
+
 Features:
 
 Ability to sign up, sign in, sign out
@@ -35,5 +42,5 @@ SQL for database maintenance
 Carrierwave for profile pictures
 Mailcatcher/SendGrid for email support
 RSpec/Capybara for testing suite
-Github 
+Github
 Heroku for deployment
