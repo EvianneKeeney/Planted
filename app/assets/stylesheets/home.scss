@@ -1,6 +1,184 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-nav{
+  background-image: url("http://soilshs.co.uk/s/cc_images/teaserbox_13014441.jpg?t=1429022285");
+  max-height: 300px;
+  position: relative;
+  box-shadow: 5px 5px 10px 10px rgba(0,0,0,0.5);
+}
+
+.home-nav h2 {
+  text-align: left;
+  padding: 100;
+  font-size: 130px;
+  font-weight:bold;
+  text-shadow: 0 2px 2px #999;
+  color:#32CD32;
+}
+
+
+.home-nav h2 {
+  text-align: left;
+  padding: 100;
+  font-size: 130px;
+  font-weight:bold;
+  text-shadow: 0 2px 2px #999;
+  color:#32CD32;
+}
+
+.new_user h2{
+  color:#32CD32
+}
+
+
+.home-nav li {
+  font-family: 'Spirax', cursive;
+  display: inline;
+  cursor: pointer;
+  box-shadow: 0 2px 2px #999;
+  color: #fff;
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 25px;
+  background-color: white;
+  margin: 0 20px 0 20px;
+  color:#32CD32;
+
+}
+
+.home-nav ul{
+  margin-top: -130px;
+}
+
+a {
+  text-decoration:none !important
+
+}
+
+.home-nav a:hover {
+  display: inline;
+  border-radius: 25px;
+  background-color: #005f5f;
+}
+
+.home-nav a.active {
+  background-color: #fff;
+  color: grey;
+  cursor: default;
+}
+
+@media screen and (min-width: 600px) {
+  .home-nav li {
+    width: 120px;
+    height: 100px;
+    width: 100px;
+    line-height: 50px;
+    font-size: 50px;
+  }
+
+}
+
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+.snip1566 {
+  display: inline-block;
+  margin: 20px;
+  max-width: 190px;
+  width: 100%;
+  color: #bbb;
+  font-size: 25px;
+  font-family: 'Spirax', cursive;
+
+  box-shadow: none !important;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.snip1566 *,
+.snip1566:before,
+.snip1566:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.snip1566:before,
+.snip1566:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 100%;
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+  border: 2px solid #bbb;
+  border-color: transparent #bbb;
+}
+
+.snip1566 img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.snip1566 figcaption {
+  position: relative;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  opacity: 100;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 50%;
+}
+
+
+.snip1566 a {
+  position: bottom;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-size: 44px;
+  color: white;
+
+}
+
+.snip1566:hover figcaption,
+.snip1566.hover figcaption {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.snip1566:hover:before,
+.snip1566.hover:before,
+.snip1566:hover:after,
+.snip1566.hover:after {
+  border-width: 10px;
+}
+
+.snip1566:hover:before,
+.snip1566.hover:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.snip1566:hover:after,
+.snip1566.hover:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
 .btn {
   background: #1f9419;
   background-image: -webkit-linear-gradient(top, #1f9419, #16de66);
