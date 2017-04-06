@@ -81,7 +81,7 @@
     <ul>
     <% current_user.plants.each do |plant| %>
     <li>
-    <%= link_to plant_path(current_user.plants.ids) do %> <%= plant.name %> <%end%>
+    <%= link_to user_plant_path(current_user, plant.id) do %> <%= plant.name %> <%end%>
   </li>
     <% end %>
   </ul>

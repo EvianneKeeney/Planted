@@ -20,7 +20,11 @@
 <p>
   <strong>Date Last Watered:</strong>
   <br><br>
-  <%= @plant.date_last_watered.strftime("%a, %m/%d/%Y at %I:%M%p") %>
+  <% if @plant.date_last_watered.nil? %>
+  <strong>Cycle not started</strong>
+  <% else %>
+  <%= @plant.date_last_watered.strftime("%a, %m/%d/%Y at %I:%M%p")%>
+  <% end %>
 </p>
 
 <p>
@@ -30,8 +34,8 @@
   <% to_water = date_last_watered_to_i + cycle_in_ms%>
   <% date_to_water = Time.at(to_water)%>
   <br><br>
-  <% if date_to_water.nil %>
-    Cycle not started
+  <% if @plant.date_last_watered.nil? %>
+  <strong>Cycle not started</strong>
   <% else %>
   <%= date_to_water.strftime("%a, %m/%d/%Y at %I:%M%p")%>
   <% end %>
@@ -42,7 +46,12 @@
   <% time_left = to_water - Time.now.to_i %>
   <% date_time_left = time_left/86400 %>
   <br><br>
-  <%= date_time_left.to_f %>
+  <% if date_time_left < 0 %>
+  <strong>Cycle not started</strong>
+  <% else %>
+  <%= date_time_left.to_f%>
+  <% end %>
+
 </p>
 
 </div>
