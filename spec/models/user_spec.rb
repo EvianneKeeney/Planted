@@ -21,4 +21,14 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
     expect(user.errors[:password_confirmation]).to_not be_blank
   end
+
+  it { should have_valid(:city).when('Radnor') }
+  it { should_not have_valid(:city).when(nil, '')}
+
+  it { should have_valid(:state).when('Pennsylvania') }
+  it { should_not have_valid(:state).when(nil, '')}
+
+  it { should have_valid(:country).when('USA') }
+  it { should_not have_valid(:country).when(nil, '')}
+
 end
