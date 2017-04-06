@@ -8,26 +8,32 @@ changes
 
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application that allows users to add plants to a dashboard garden and is reminded when to water them via email.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+Heroku link: https://plant-a-garden.herokuapp.com/
 
-* Configuration
+Features:
 
-* Database creation
+Ability to sign up, sign in, sign out
+As a user you can
 
-* Database initialization
+Add a plant, start a watering cycle, receive emails when the cycle is finished.
+See the current state of your plant via show page including
+  -Date planted
+  -Date last watered
+  -Date expected to watered
+  -Time left before next water
 
-* How to run the test suite
+Technologies incorporated:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ......
-For heroku master push 
+Ruby version 2.3.3 (Rails framework)
+React
+Devise for user sign in
+SQL for database maintenance
+Carrierwave for profile pictures
+Mailcatcher/SendGrid for email support
+RSpec/Capybara for testing suite
+Github 
+Heroku for deployment
