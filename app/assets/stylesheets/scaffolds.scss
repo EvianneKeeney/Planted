@@ -47,7 +47,6 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
     color: #fff;
-
   }
 }
 
@@ -88,4 +87,30 @@ div {
 
 label {
   display: block;
+}
+
+input[type="submit" i] {
+  background-color: green;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius:6px;
+  color: #fff;
+  font-family: 'Oswald';
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  border:none;
+}
+
+input[type="file" i] {
+  background-color: #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius:6px;
+  color: #fff;
+  font-family: 'Oswald';
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  border:none;
 }
