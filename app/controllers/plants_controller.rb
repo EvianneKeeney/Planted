@@ -2,12 +2,14 @@ class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   def index
-    @plants = Plant.all
+    @user = current_user
+    @plants = @user.plants
     @temperature = Temperature.new(current_user.latitude, current_user.longitude)
   end
 
   def show
-    @plants = Plant.find(params[:id])
+    @user = current_user
+    @plants = @user.plants
     @temperature = Temperature.new(current_user.latitude, current_user.longitude)
   end
 

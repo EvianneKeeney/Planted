@@ -1,10 +1,12 @@
 class Api::V1::PlantsController < ApplicationController
   def index
-    render json: Plant.all.sort
+    @user = current_user
+    render json: @user.plants
   end
 
   def show
-    render json: Plant.find(params[:id])
+    @user = current_user
+    render json: @user.plants
   end
 
   def update
