@@ -1,5 +1,5 @@
 # README
-changes
+This is just a changing message for heroku asset compilation
 
 
 ![Build Status](https://app.codeship.com/projects/297b4010-efad-0134-e01f-4e0ea4fc24eb/status?branch=master)
