@@ -87,6 +87,7 @@ class Plant extends Component {
 
           return (
             <PlantItem
+            user={plant.user_id}
             id={plant.id}
             key={plant.id}
             name={plant.name}

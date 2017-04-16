@@ -1,9 +1,9 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
-    @user = current_user
-    @plants = @user.plants
+    @plants = current_user.plants
     @temperature = Temperature.new(current_user.latitude, current_user.longitude)
   end
 

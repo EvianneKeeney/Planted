@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => "/sidekiq"
   get 'home/index'
 
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => "api/v1/plants" }
 
   devise_scope :user do
     authenticated :user do
@@ -15,6 +15,18 @@ Rails.application.routes.draw do
         resources :plants
       end
     end
+
+    devise_scope :user do
+      authenticated :user do
+        namespace :api do
+          namespace :v1 do
+            resources :sessions, defaults: {format: :json}
+          end
+        end
+      end
+    end
+
+
 
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root
