@@ -59,10 +59,10 @@ class PlantsController < ApplicationController
     end
 
     def plant_params
-      params.permit(:name, :string, :cycle, :integer, :profile_photo, :remove_profile_photo, :date_last_watered)
+      params.permit(:name, :string, :cycle, :integer, :profile_photo, :remove_profile_photo, :date_last_watered, :user)
     end
 
     def new_plant_params
-      params.require(:plant).permit(:name, :cycle, :profile_photo)
+      params.require(:plant).permit(:name, :cycle, :profile_photo, :user)
     end
 end
