@@ -1,6 +1,5 @@
 <br>
 <br>
-<div class="plantformstyle">
 <%= form_for(plant) do |f| %>
   <% if plant.errors.any? %>
     <div id="error_explanation">
@@ -13,6 +12,9 @@
       </ul>
     </div>
   <% end %>
+<%end%>
+<div class="plantformstyle">
+<%= form_for(plant) do |f| %>
 <br>
 
   <div class="field">
